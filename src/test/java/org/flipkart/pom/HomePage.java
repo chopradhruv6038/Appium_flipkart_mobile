@@ -13,6 +13,9 @@ public class HomePage extends BaseTest {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView")
     private WebElement searchForProductsBox;
 
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.ImageView")
+    private WebElement categoriesIcon;
+
 
     //methods
 
@@ -45,6 +48,13 @@ public class HomePage extends BaseTest {
         System.out.println("\n" + "Actual Search Box Text : " + getText() + "\n" + "Expected Search Box Text : " + expectedSearchBoxText(txt));
 
         return this;
+    }
+
+    public CategoriesPage clickCategoriesIcon() {
+
+        click(categoriesIcon);
+
+        return new CategoriesPage();
     }
 
 

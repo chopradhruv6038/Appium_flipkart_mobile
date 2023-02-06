@@ -1,6 +1,7 @@
 package org.flipkart.Tests;
 
 import org.flipkart.Base.BaseTest;
+import org.flipkart.pom.CategoriesPage;
 import org.flipkart.pom.HomePage;
 import org.flipkart.pom.LanguagePage;
 import org.flipkart.pom.NumberPage;
@@ -15,7 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 
-public class NavigateToHomeTests extends BaseTest {
+public class NavigateToHomePageTests extends BaseTest {
 
     InputStream DataIs;
     JSONObject userData;
@@ -24,6 +25,7 @@ public class NavigateToHomeTests extends BaseTest {
     LanguagePage languagePage;
     NumberPage numberPage;
     HomePage homePage;
+    CategoriesPage categoriesPage;
 
     @BeforeClass
     public void beforeClass() throws IOException {
@@ -53,21 +55,21 @@ public class NavigateToHomeTests extends BaseTest {
         languagePage = new LanguagePage();
         numberPage = new NumberPage();
         homePage = new HomePage();
+        categoriesPage = new CategoriesPage();
 
         System.out.println("**** Method Name : " + m.getName() + " ****");
 
     }
 
     @Test
-    public void selectLanguage() {
+    public void NavigateToHmPgAndAssert() {
 
         languagePage.clickEnglishLanguage();
         numberPage = languagePage.clickContinueBtn();
         homePage = numberPage.clickNoneOfTheAboveLink().clickCrossIcon();
         homePage.assertFlipKartLogo();
         homePage.assertSeachForProductsBox(userData.getJSONObject("ExpectedHomePage").getString("SearchBoxText"));
-
-
+        //categoriesPage = homePage.clickCategoriesIcon();
     }
 
 

@@ -17,7 +17,8 @@
 
         <classes>
 
-            <class name="org.flipkart.Tests.NavigateToHomeTests"/>
+            <class name="org.flipkart.Tests.NavigateToHomePageTests"/>
+            <class name="org.flipkart.Tests.CategoriesPageTests"/>
 
 
         </classes>

@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -180,6 +181,14 @@ public class BaseTest {
 
     }
 
+    @AfterClass
+    public void afterClass() {
+
+        // terminateApp();
+        // launchApp();
+
+    }
+
 
     @AfterTest
     public void quitDriver() {
@@ -188,6 +197,8 @@ public class BaseTest {
 
 
     }
+
+
 
 
 
